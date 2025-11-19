@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy of Coral Branch Nursery Display</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'coral-sand': '#FBF9F4',
+            'coral-dark': '#3A3A3A',
+            'coral-blue': '#4A90E2',
+            'coral-green': '#50E3C2',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #schedule-to-print, #schedule-to-print * {
+        visibility: visible;
+      }
+      #schedule-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      button, header, aside, .print-hidden {
+          display: none !important;
+      }
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0-rc.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0-rc.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+  <!-- 3D Model Viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module">
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = `/index.tsx?t=${Date.now()}`;
+    document.body.appendChild(script);
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
